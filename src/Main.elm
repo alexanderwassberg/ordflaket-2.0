@@ -113,7 +113,7 @@ randomNameGenerator =
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case Debug.log "msg" msg of
+    case msg of
         GotWords result ->
             case result of
                 Ok data ->
@@ -259,12 +259,12 @@ view model =
                 [ Html.header
                     []
                     [ logo
-                    -- , Html.button
-                    --     [ HE.onClick ClickedToggleFavorites
-                    --     ]
-                    --     [ heartFill
-                    --     , Html.text "Favorites"
-                    --     ]
+                    , Html.button
+                         [ HE.onClick ClickedToggleFavorites
+                         ]
+                         [ heartFill
+                         , Html.text "Favorites"
+                         ]
                     ]
                 , view_Word model
                 , Html.footer
