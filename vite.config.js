@@ -3,7 +3,7 @@ import elmPlugin from 'vite-plugin-elm';
 
 export default defineConfig({
   plugins: [elmPlugin({
-        debug: true,
-        optimize: false,
+        debug: false,
+        optimize: true,
     })],
 });

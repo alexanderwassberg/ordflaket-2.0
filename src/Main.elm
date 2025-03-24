@@ -293,26 +293,26 @@ view model =
                         [ speaker
                         ]
                     ]
-                -- , Html.node "custom-dialog"
-                --     []
-                --     [ Html.ul
-                --         [ HA.class "favorites"
-                --         ]
-                --         (List.map
-                --             (\favorite ->
-                --                 Html.li
-                --                     []
-                --                     [ Html.text favorite
-                --                     , Html.button
-                --                         [ HE.onClick (ClickedRemoveFromFavorites favorite)
-                --                         ]
-                --                         [ close
-                --                         ]
-                --                     ]
-                --             )
-                --             model.favorites
-                --         )
-                --     ]
+                , Html.node "custom-dialog"
+                    []
+                    [ Html.ul
+                        [ HA.class "favorites"
+                        ]
+                        (List.map
+                            (\favorite ->
+                                Html.li
+                                    []
+                                    [ Html.text favorite
+                                    , Html.button
+                                        [ HE.onClick (ClickedRemoveFromFavorites favorite)
+                                        ]
+                                        [ close
+                                        ]
+                                    ]
+                            )
+                            model.favorites
+                        )
+                    ]
                 ]
 
         Err err ->
